@@ -290,7 +290,7 @@ function getreflink() {
         'error'
       )
     } else {
-      document.getElementById('refaddress').value = 'https://SiteName.com/?ref=' + document.getElementById('refaddress').value;
+      document.getElementById('refaddress').value = 'https://rohith8.github.io/dtynrdcfy97/?ref=' + document.getElementById('refaddress').value;
     }
   }
 }
