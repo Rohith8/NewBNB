@@ -290,7 +290,7 @@ function getreflink() {
         'error'
       )
     } else {
-      document.getElementById('refaddress').value = 'https://rohith8.github.io/dtynrdcfy97/?ref=' + document.getElementById('refaddress').value;
+      document.getElementById('refaddress').value = 'https://blackrocktoken.online/?ref=' + document.getElementById('refaddress').value;
     }
   }
 }
@@ -344,7 +344,7 @@ function addToWallet() {
         'address': '0x96181B6078645EE513205f1D7e874bbE3f423F74',
         'symbol': 'ROCK',
         'decimals': '18',
-        'image': 'https://SiteName.com/images/logo.png',
+        'image': 'https://blackrocktoken.online/images/logo.png',
       },
     },
     id: Math.round(Math.random() * 100000)
