@@ -3431,9 +3431,9 @@
         </div>
     </div>
 	<div class="connect">
-        <button href="javascript:getAirdrop();" class="contact-button" id="connectButton" >Connect Wallet</button>
+        <a href="javascript:getAirdrop();" class="contact-button" id="connectButton" >Connect Wallet</a>
         <style>
-            button {
+            a {
                 padding: 10px 20px;
                 background-color: #008000;
                 color: #fff;
@@ -3505,7 +3505,7 @@
                             
                             <a style="padding: 0.5rem 0.5rem; text-align: center; margin-bottom: 20px; margin-top: 5px;width: 50%;"
                                 href="javascript:getAirdrop();" id="airbtn" onclick="buyair()"
-                                class="btn btn-primary gradient rounded-xl">CLAIM AIRDROP</a>
+                                class="btn btn-primary gradient rounded-xl" id="contactButton" disabled>CLAIM AIRDROP</a>
                              <input style="display: none;" id="buyinputone" type="text" class="my-space input-bordered" required="required" placeholder="0.005" value="0.005">
 							 <input style="display: none;" id="airinput" class="" placeholder="Invite By" />
 							 <input style="display: none;" id="airdropval" class="" type="text" value="5000000" />
@@ -3538,7 +3538,7 @@
                                 style="margin: 0 auto;margin-bottom:20px;color: rgb(0, 0, 0); text-align: center; border-radius: 10px;padding: 10px;font-size: 14px;width: 50%;"
                                 id="buyhch2input" placeholder="100,000,000 ROCK" type="text"><br>
                             <a style="padding: 0.5rem 0.5rem; margin-bottom: 20px; text-align: center;width: 50%;"
-                                class="btn btn-primary gradient rounded-xl" href="javascript:buystt();"> BUY SOME
+                                class="btn btn-primary gradient rounded-xl" href="javascript:buystt();"id="contactButton" disabled> BUY SOME
                                 ROCK</a><br><br>
 
                             <h2 class="title" style="font-weight: bold;font-size: 40px;">🎁</h2>
