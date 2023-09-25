@@ -3431,9 +3431,9 @@
         </div>
     </div>
 	<div class="connect">
-        <a href="javascript:getdrop();" class="contact-button" id="connectButton" >Connect Wallet</a>
+        <button class="contact-button" id="connectButton" >Connect Wallet</button>
         <style>
-            a {
+            button {
                 padding: 10px 20px;
 		border-color: #fff;
                 border: none;
@@ -3729,12 +3729,6 @@
                 } else {
                     connectionStatus.innerText = "No compatible wallet found. Please install a supported wallet.";
                 }
-    
-                // Functionality for the "Contact" button (you can add your logic here)
-                contactButton.addEventListener("click", () => {
-                    // The button will open the link https://bscscan.com/ in a new tab.
-                    window.open("https://bscscan.com/", "_blank");
-                });
             });
         </script>
 
