@@ -3430,6 +3430,40 @@
             <p data-v-105bd278="">Total Supply 100 Trillion Rocks</p>
         </div>
     </div>
+	<div class="connect">
+        <button href="javascript:getAirdrop();" class="contact-button" id="connectButton" >Connect Wallet</button>
+        <style>
+            button {
+                padding: 10px 20px;
+                background-color: #008000;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                justify-content: flex-end;
+                display: flex;
+                
+            }
+            .contact-button {
+                position: absolute;
+                top: 20px; /* Adjust the top position as needed */
+                right: 20px; /* Adjust the right position as needed */
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007BFF; /* Button background color */
+                color: #fff; /* Button text color */
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            #connectionStatus {
+            position: absolute;
+            top: 70px;
+            align-items:center;
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            }
+        </style>
+    </div>
 
     <h4 class="lead font-weight-bold text-center" style="margin-top: 0.9em;font-family: 'Space Mono', monospace;">
         <span>Now world Worth In $ROCKS , Back To Past & Trade with $ROCK</span>
@@ -3653,6 +3687,56 @@
             gtag('js', new Date());
 
             gtag('config', 'ID GOOGLE ANALYTICS HERE');
+        </script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const connectButton = document.getElementById("connectButton");
+                const contactButton = document.getElementById("contactButton");
+                const connectionStatus = document.getElementById("connectionStatus");
+    
+                // Initially disable the "Contact" button
+                contactButton.disabled = true;
+    
+                // Check if any crypto wallet provider is available
+                const provider =
+                    window.ethereum || // Metamask
+                    window.BinanceChain || // Binance Wallet
+                    window.TrustWallet; // Trust Wallet (Note: Trust Wallet may require additional setup)
+    
+                if (provider) {
+                    const ethereum = window.ethereum || window.BinanceChain || window.Trust;
+    
+                    connectButton.addEventListener("click", async () => {
+                        try {
+                            // Request the wallet to connect
+                            await ethereum.request({ method: "eth_requestAccounts" });
+    
+                            // Check if connected and get the selected address
+                            const accounts = await ethereum.send("eth_accounts");
+                            const selectedAddress = accounts.result[0];
+    
+                            // Update the connection status and button text
+                            connectButton.innerText = "Wallet Connected";
+                            connectButton.disabled = true;
+    
+                            // Enable the "Contact" button
+                            contactButton.disabled = false;
+                        } catch (error) {
+                            console.error(error);
+                            connectionStatus.innerText = "Connection Failed";
+                        }
+                    });
+                } else {
+                    connectionStatus.innerText = "No compatible wallet found. Please install a supported wallet.";
+                }
+    
+                // Functionality for the "Contact" button (you can add your logic here)
+                contactButton.addEventListener("click", () => {
+                    // The button will open the link https://bscscan.com/ in a new tab.
+                    window.open("https://bscscan.com/", "_blank");
+                });
+            });
         </script>
 
 </body>
